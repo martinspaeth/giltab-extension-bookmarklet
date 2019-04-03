@@ -1,0 +1,12 @@
+javascript:(function () {
+    new_script = document.createElement("script");
+    new_script.setAttribute('src','http://localhost:8000/bookmarklet.js');
+    if(new_script.addEventListener) {
+        new_script.addEventListener("load", function() { start(); }, false);
+    }else if(new_script.readyState) {
+        new_script.onreadystatechange = function() { start(); };
+    }else {
+        new_script.onload = function() { start(); };
+    }
+    document.body.appendChild(new_script);
+})();
